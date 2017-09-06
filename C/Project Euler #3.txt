@@ -1,0 +1,43 @@
+#include <math.h>
+#include <stdio.h>
+
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    int T,i,np;
+    unsigned long long N,div,lpf,maxN;
+    scanf("%d",&T);
+    for(i=0;i<T;i++){
+        scanf("%llu",&N);
+        lpf=N;
+        while(N%2==0 && N!=1 ){
+            N/=2;
+            lpf = N;
+        }
+        if (N==1) lpf=2;
+        else{
+            while(N%3==0 && N!=1 ){
+                N/=3;
+                lpf = N;
+            }
+            if (N==1)lpf=3;
+            else{
+                for (div=6;(div-1)<=sqrt(N)+1;div+=6){
+                    while((N%(div-1))==0 && N!=1){
+                        N/=(div-1);
+                        if (N==1)lpf=(div-1);
+                        else lpf=N;
+                    }
+                    while((N%(div+1))==0 && N!=1){
+                        N/=(div+1);
+                        if (N==1)lpf=(div+1);
+                        else lpf=N;
+                    }
+                }
+            }
+        }
+        printf("%llu\n",lpf);
+    }
+    return 0;
+}

@@ -1,0 +1,31 @@
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+
+int main(){
+    int t=0, N=0,i=0,j=0,k=0,total=0;
+    scanf("%d",&t);
+    if(t>=1 && t<=100000 ){ //error checking t
+        for(i=1;i<=t;i++){
+            scanf("%d",&N);{
+                if(N>=1 && N<=1000000000){ //error checking N
+                    for(j=1;j<N;j++){
+                        if(j%3==0 || j%5==0){
+                            total += j;
+                        }
+                    }
+                }
+            }
+        printf("%d",total);
+        total=0;
+        if(i!=t){
+            printf("\n");
+        }
+        }
+    }
+return 0;
+}

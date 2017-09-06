@@ -1,0 +1,46 @@
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+
+int main(){
+    int n=0, i=0, jumps=0; 
+    scanf("%d",&n);
+    int *c = malloc(sizeof(int) * n);
+    for(int c_i = 0; c_i < n; c_i++){
+       scanf("%d",&c[c_i]);
+    }
+    while(1){
+        if(i==n-1){
+            break;
+        }
+        else if(i+1==n-1){
+            i = i+1;
+            jumps = jumps+1;
+            break;
+        }
+        else if(c[i+2]==0){
+            i = i+2;
+            jumps = jumps+1;
+        }
+        else if(c[i+1]==0){
+            i = i+1;
+            jumps = jumps+1;
+        }
+        else if(i+2>n-1){
+            i = i+1;
+            jumps = jumps+2;
+        }
+        else{
+            i = i+2;
+            jumps = jumps+2;
+        }
+        //printf("%d %d\n", i, jumps);
+        
+    }
+    printf("%d", jumps);
+    return 0;
+}

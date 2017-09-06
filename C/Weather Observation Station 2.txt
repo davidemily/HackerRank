@@ -1,0 +1,4 @@
+SELECT ROUND(lat_sum,2), ROUND(lon_sum,2)
+FROM (
+    SELECT sum(lat_n) AS lat_sum, sum(LONG_W) AS lon_sum
+    FROM STATION);

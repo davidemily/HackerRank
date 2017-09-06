@@ -1,0 +1,38 @@
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+
+int checkStrings(char s[], char t[]){
+    int cnt=0, sizeS=0, sizeT=0, sizeSame=0;
+    for(int k=0; s[k] == t[k]; k++){
+        sizeSame++;
+    }
+    for(int i=0; s[i] != '\0'; i++){
+        sizeS++;
+    }
+    for(int j=0; t[j] != '\0'; j++){
+        sizeT++;
+    }
+    cnt = (sizeS - sizeSame) + (sizeT - sizeSame);
+return cnt; 
+}
+
+int main(){
+    char* s = (char *)malloc(512000 * sizeof(char));
+    scanf("%s",s);
+    char* t = (char *)malloc(512000 * sizeof(char));
+    scanf("%s",t);
+    int k; 
+    scanf("%d",&k);
+    if(k >= checkStrings(s, t)){
+        printf("Yes");
+    }
+    else{
+        printf("No");
+    }
+    return 0;
+}

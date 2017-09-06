@@ -1,0 +1,26 @@
+nclude <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int elevation=0, hills=0, n=0;
+    scanf("%d", &n);
+    for(int i=0; i<=n; i++){
+        char temp='a';
+        scanf("%c", &temp);
+        if(temp == 'U'){
+            elevation = elevation+1;
+            if(elevation==0){
+                hills = hills+1;
+            }
+        }
+        if(temp == 'D'){
+            elevation = elevation-1;
+        }
+    }
+    printf("%d", hills);
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
+    return 0;
+}
+

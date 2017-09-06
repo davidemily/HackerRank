@@ -1,0 +1,29 @@
+nclude <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+
+void solve(int year){
+    // Complete this function
+    int day=13;
+    if(!(year%4) && (year<1918 || year%100 || !(year%400))){ 
+        day--;
+    }
+    if(year==1918){
+        day=26;
+    }
+    printf("%d.09.%d",day,year);
+    
+}
+
+int main() {
+    int year; 
+    scanf("%d", &year);
+    int result_size;
+    solve(year);
+    return 0;
+}
+

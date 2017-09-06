@@ -1,0 +1,23 @@
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+
+int main(){
+    int t=0;
+    scanf("%d",&t);
+    for(int a0 = 0; a0 < t; a0++){
+        long long n=0, x=0, y=0;
+        scanf("%lld",&n);
+        for(int i=1; i<=n; i++){
+            x= x+i;
+            y= y+(i*i);
+        }
+        x = x*x;
+        printf("%lld\n", x-y);
+    }
+    return 0;
+}

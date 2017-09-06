@@ -1,0 +1,31 @@
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+
+void chocolate(int n, int c, int m){
+    int wrappers=0, chocs=0;
+    chocs = n/c;
+    wrappers=chocs;
+    while(wrappers>=m){
+        wrappers = wrappers - m;
+        chocs = chocs + 1;
+        wrappers = wrappers + 1;
+    }
+    printf("%d\n", chocs);
+}
+int main(){
+    int t; 
+    scanf("%d",&t);
+    for(int a0 = 0; a0 < t; a0++){
+        int n; 
+        int c; 
+        int m; 
+        scanf("%d %d %d",&n,&c,&m);
+        chocolate(n,c,m);
+    }
+    return 0;
+}

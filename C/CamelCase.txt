@@ -1,0 +1,21 @@
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+
+int main(){
+    int cnt=1, i=0;
+    char* s = (char *)malloc(100240 * sizeof(char));
+    scanf("%s",s);
+    while(s[i]!='\0'){
+        if((int)s[i] > 64 && (int)s[i] < 91){
+            cnt = cnt + 1;
+        }
+        i++;
+    }
+    printf("%d", cnt);
+    return 0;
+}

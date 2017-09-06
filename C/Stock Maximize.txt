@@ -1,0 +1,55 @@
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+
+void stockPicker(){
+    int days=0, minPrice=0, stock=0, j=0, i=0, highPoint=0;
+    long long profit=0;
+    int array[50000] = {0};
+    scanf("%d", &days);
+    for(i=0; i<days; i++){
+        scanf("%d", &array[i]);
+    }
+    for(int i=1; i<days; i++){
+        if(array[i-1] < array[i]){
+            highPoint = i;
+        }
+    }
+    j=highPoint-1;
+    while(j>0){
+        if(array[j] < array[highPoint]){
+            profit = profit - array[j];
+            stock = stock + 1;
+        }
+        else if(array[j] > array[highPoint]){
+            while(stock>0){
+                stock--;
+                profit += array[highPoint];
+            }
+            highPoint = j;
+        }
+        j--;
+    }
+    profit = profit - array[0];
+    stock = stock + 1;
+    while(stock>0){
+        stock--;
+        profit = profit + array[highPoint];
+    }
+    printf("%lld\n", profit);
+    return;
+}
+
+int main() {
+    int n=0;
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+    scanf("%d", &n);
+    for(int i=0; i<n; i++){
+        stockPicker();
+    }
+    return 0;
+}

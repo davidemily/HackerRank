@@ -1,0 +1,29 @@
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+
+int main(){
+    int n; 
+    int k;
+    int max=0;
+    scanf("%d %d",&n,&k);
+    int *height = malloc(sizeof(int) * n);
+    for(int height_i = 0; height_i < n; height_i++){
+       scanf("%d",&height[height_i]);
+       if(height[height_i] > max){
+           max = height[height_i];
+       }
+    }
+    // your code goes here
+    if(k>max){
+        printf("%d",0);
+    }
+    else{
+        printf("%d", max-k);
+    }
+    return 0;
+}

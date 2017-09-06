@@ -1,0 +1,37 @@
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+
+int fibonacci(int num){
+   if (num == 0)
+      return 0;
+   else if (num == 1)
+      return 1;
+   else
+      return (fibonacci(num-1) + fibonacci(num-2));
+}
+int main(){
+    int i=0,j=0,k=0,total=0,N=0,t=0,fibnum=1;
+    scanf("%d",&t);
+    if(t>=1 && t<=100000)
+        for(i=1;i<=t;i++){
+            scanf("%d",&N);
+            if(N>=10 && N <=40000000000000000)
+            for(j=0;fibonacci(j)<N;j++){
+               if(fibonacci(j)%2==0){
+                    total+=fibonacci(j);
+                }
+            }
+            printf("%d",total);
+            if(i!=t){
+                fprintf(stdout,"\n");
+            }
+            fibnum=1;
+            total=0;
+        }
+    return 0;
+}
