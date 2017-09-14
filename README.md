@@ -1,3 +1,2 @@
-## HackerRank
----
+# HackerRank
 ### Grinding it out
