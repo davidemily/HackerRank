@@ -1,0 +1,30 @@
+nclude <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+
+int main(){
+    int i=0, j=1, k=2, cnt=0;
+    char* S = (char *)malloc(10240 * sizeof(char));
+    scanf("%s",S);
+    while(S[i] != NULL && S[j] != NULL && S[k] != NULL){
+        if(S[i]!='S'){
+            cnt = cnt+1;
+        }
+        if(S[j]!='O'){
+            cnt = cnt+1;
+        }
+        if(S[k]!='S'){
+            cnt = cnt+1;
+        }
+        i = i+3;
+        j = j+3;
+        k = k+3;
+    }
+    printf("%d", cnt);
+    return 0;
+}
+
