@@ -1,0 +1,30 @@
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+
+int solve(char* opr) {
+    // Complete this function
+    int x=(opr[0]-48);
+    int y=(opr[2]-48);
+    int result=0;
+    if(opr[1]=='+'){
+        result = x+y;
+    }
+    if(opr[1]=='-'){
+        result = x-y;
+    }
+    return result;
+}
+
+int main() {
+    char* opr = (char *)malloc(512000 * sizeof(char));
+    scanf("%s", opr);
+    int result = solve(opr);
+    printf("%d\n", result);
+    return 0;
+}
+
