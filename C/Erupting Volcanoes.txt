@@ -1,0 +1,60 @@
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+
+int main() {
+    int max=0;
+    int subtraction=0;
+    int n; 
+    scanf("%i", &n);
+    int m; 
+    scanf("%i", &m);
+    int array[300][300]={0};
+    for(int a0 = 0; a0 < m; a0++){
+        int x; 
+        int y; 
+        int w; 
+        scanf("%i %i %i", &x, &y, &w);
+        // Write Your Code Here
+        array[x][y]=w;
+        for(int i=1; i<=w; i++){
+            if((x-i)>=0 && (x+i)<=n){
+                array[x-i][y]+=w-i;
+                array[x+i][y]+=w-i;
+                array[x][y-i]+=w-i;
+                array[x][y+i]+=w-i;
+                for(int j=1; j<=w-i; j++){
+                    if(i>=j){
+                        subtraction = i;
+                    }
+                    if(i<j){
+                        subtraction = j;
+                    }
+                    if((y-j)>=0 && (y+j)<=n){
+                        array[x-i][y-j] += w-subtraction;
+                        array[x-i][y+j] += w-subtraction;
+                        array[x+i][y-j] += w-subtraction;
+                        array[x+i][y+j] += w-subtraction;
+                    }
+                }
+            }
+        }
+    }
+            
+    for(int i=0; i<n; i++){
+        for(int j=0; j<n; j++){
+            //printf("%d ", array[i][j]);
+            if(array[i][j]>max){
+                max=array[i][j];
+            }
+        }
+        //printf("\n");
+    }
+    printf("%d", max);
+    return 0;
+}
+
