@@ -1,0 +1,9 @@
+if __name__ == '__main__':
+    n = int(raw_input())
+    integer_list = raw_input()
+    integer_list = integer_list.split()
+    for i in range(n):
+        integer_list[i] = int(integer_list[i])
+    tup = tuple(integer_list)
+    print hash(tup)
+
