@@ -1,0 +1,35 @@
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+
+char* twoStrings(char* s1, char* s2){
+    // Complete this function
+    int i=0, j=0;
+    while(s1[i+1]!='\0' && s2[j+1]!='\0'){
+        if(s1[i]==s2[j]){
+            return "YES";
+        }
+        i++;
+        j++;
+    }
+    return "NO";
+}
+
+int main() {
+    int q; 
+    scanf("%i", &q);
+    for(int a0 = 0; a0 < q; a0++){
+        char* s1 = (char *)malloc(512000 * sizeof(char));
+        scanf("%s", s1);
+        char* s2 = (char *)malloc(512000 * sizeof(char));
+        scanf("%s", s2);
+        char* result = twoStrings(s1, s2);
+        printf("%s\n", result);
+    }
+    return 0;
+}
+
