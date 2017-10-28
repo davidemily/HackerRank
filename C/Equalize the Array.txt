@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int n=0, temp=0, highest=0, result=0, flag=0;
+    scanf("%d", &n);
+    int array[101] = {0};
+    for(int i=0; i<n; i++){
+        scanf("%d", &temp);
+        array[temp] = array[temp]+1;
+    }
+    for(int j=1; j<=100; j++){
+        if(array[j]>highest){
+            highest=array[j];
+            flag=j;
+        }
+    }
+    for(int k=1; k<=100; k++){
+        if(array[k]!=0 && k!=flag){
+            result += array[k];
+        }
+    }
+    printf("%d", result);
+    
+    return 0;
+}
+
