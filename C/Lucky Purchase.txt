@@ -1,0 +1,44 @@
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+
+int main() {
+    int n, lowNum=999999;
+    char* lowString = (char *)malloc(512000 * sizeof(char));
+    scanf("%i", &n);
+    for(int a0 = 0; a0 < n; a0++){
+        char* s = (char *)malloc(512000 * sizeof(char));
+        int n; 
+        scanf("%s %i", s, &n);
+        int temp=n;
+        int sevens=0;
+        int fours=0;
+        while(n>0){
+            if(n%10==7){
+                sevens++;
+            }
+            else if(n%10==4){
+                fours++;
+            }
+            n = n/10;
+        }
+        if(sevens==fours && sevens!=0){
+            if(temp<lowNum){
+                lowNum = temp;
+                lowString = s;
+            }
+        }
+    }
+    if(lowNum==999999){
+        printf("-1");
+    }
+    else{
+        printf("%s", lowString);
+    }
+    return 0;
+}
+
