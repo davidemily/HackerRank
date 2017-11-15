@@ -1,0 +1,49 @@
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+
+int dif(int a,int b){
+    return abs(a-b);
+}
+
+void tripleRecursion(int n, int m, int k) {
+    // Complete this function
+    int factor=0, row=0, col=0;
+    int array[100][100] = {0};
+    for(int i=0; i<n; i++){
+        for(int j=0; j<n; j++){
+            if(i==j){
+                array[i][j] = m +(factor*k) - dif(i,j);
+                factor++;
+            }
+            else if(i>j){
+                array[i][j] = array[i-1][j]-1;
+            }
+            else{
+                array[i][j] = array[i][j-1]-1;
+            }
+        }
+    }
+    
+    //print the array
+    for(int i=0; i<n; i++){
+        for(int j=0; j<n; j++){
+            printf("%d ", array[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+int main() {
+    int n; 
+    int m; 
+    int k; 
+    scanf("%i %i %i", &n, &m, &k);
+    tripleRecursion(n, m, k);
+    return 0;
+}
+
