@@ -1,0 +1,20 @@
+#!/bin/python3
+
+import sys
+
+def pairs(k, arr):
+    # Complete this function
+    array = set(arr)
+    pairs = 0
+    for x in array:
+        if x+k in array:
+            pairs = pairs+1
+    return pairs
+
+if __name__ == "__main__":
+    n, k = input().strip().split(' ')
+    n, k = [int(n), int(k)]
+    arr = list(map(int, input().strip().split(' ')))
+    result = pairs(k, arr)
+    print(result)
+
