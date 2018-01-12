@@ -1,0 +1,24 @@
+#!/bin/python3
+
+import sys
+
+def solve(a):
+    # Complete this function
+    sumOfA = sum(a)
+    leftSum = 0
+    for i in range(len(a)):
+        current = a[i]
+        sumOfA = sumOfA - current
+        if leftSum == sumOfA:
+            return 'YES'
+        leftSum = leftSum + current
+    return 'NO'
+
+
+T = int(input().strip())
+for a0 in range(T):
+    n = int(input().strip())
+    a = list(map(int, input().strip().split(' ')))
+    result = solve(a)
+    print(result)
+
