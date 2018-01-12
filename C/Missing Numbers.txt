@@ -1,0 +1,44 @@
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+
+void missingNumbers(int arr_size, int* arr, int brr_size, int* brr) {
+    // Complete this function
+    int array[100001] = {0};
+    int temp=0;
+    for(int arr_i=0; arr_i < arr_size; arr_i++){
+        array[arr[arr_i]] = array[arr[arr_i]]-1;
+    }
+    for(int brr_i=0; brr_i < brr_size; brr_i++){
+       array[brr[brr_i]] = array[brr[brr_i]]+1;
+    }
+    for(int i=0; i<100001; i++){
+        if(array[i]!=0){
+            printf("%d ", i);
+        }
+    }
+   
+    return;
+}
+
+int main() {
+    int n; 
+    scanf("%i", &n);
+    int *arr = malloc(sizeof(int) * n);
+    for (int arr_i = 0; arr_i < n; arr_i++) {
+       scanf("%i",&arr[arr_i]);
+    }
+    int m; 
+    scanf("%i", &m);
+    int *brr = malloc(sizeof(int) * m);
+    for (int brr_i = 0; brr_i < m; brr_i++) {
+       scanf("%i",&brr[brr_i]);
+    }
+    missingNumbers(n, arr, m, brr);
+    return 0;
+}
+
