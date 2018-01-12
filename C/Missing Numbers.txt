@@ -9,7 +9,6 @@
 void missingNumbers(int arr_size, int* arr, int brr_size, int* brr) {
     // Complete this function
     int array[100001] = {0};
-    int temp=0;
     for(int arr_i=0; arr_i < arr_size; arr_i++){
         array[arr[arr_i]] = array[arr[arr_i]]-1;
     }
