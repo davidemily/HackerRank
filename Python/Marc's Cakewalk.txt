@@ -1,0 +1,19 @@
+#!/bin/python3
+
+import sys
+
+def marcsCakewalk(calorie):
+    # Complete this function
+    miles = 0 
+    calorie.sort(reverse=True)
+    for i in range(0,len(calorie)):
+        miles = miles + calorie[i]*(2**i)
+    return miles
+        
+
+if __name__ == "__main__":
+    n = int(input().strip())
+    calorie = list(map(int, input().strip().split(' ')))
+    result = marcsCakewalk(calorie)
+    print(result)
+
