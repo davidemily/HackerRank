@@ -1,4 +1,0 @@
-def average(array):
-    # your code goes here
-    arraySet = set(array)
-    return (sum(arraySet)/len(arraySet))
