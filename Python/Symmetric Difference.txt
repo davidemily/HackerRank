@@ -1,0 +1,14 @@
+m = int(input())
+a = input()
+a = set(a.split())
+n = int(input())
+b = input()
+b = set(b.split())
+c = set()
+for i in a.difference(b):
+    c.add(i)
+for j in b.difference(a):
+    c.add(j)
+c = [int(x) for x in c]
+for num in sorted(c):
+    print (num)
