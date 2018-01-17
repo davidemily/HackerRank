@@ -1,0 +1,18 @@
+n, m = input().split()
+array = [int(x) for x in input().split()]
+a = input().split()
+a = [int(x) for x in a]
+a = set(a)
+b = input().split()
+b = [int(x) for x in b]
+b = set(b)
+
+happiness = 0
+
+for i in array:
+    if i in a:
+        happiness += 1
+    if i in b:
+        happiness -= 1
+    
+print(happiness)
