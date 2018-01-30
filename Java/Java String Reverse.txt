@@ -1,0 +1,26 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static String palindromeTest(String word, int start, int end){
+        if(start >= end){
+            return "Yes";
+        }
+        if(word.charAt(start) != word.charAt(end)){
+            return "No";
+        }
+        return palindromeTest(word, start+1, end-1);
+    }
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String A=sc.next();
+        /* Enter your code here. Print output to STDOUT. */
+        String result = "No";
+        result = palindromeTest(A, 0, A.length()-1);
+        System.out.println(result);
+        }
+        
+    }
+
+
