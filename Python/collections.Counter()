@@ -1,0 +1,17 @@
+from collections import Counter
+
+numShoes = int(input())
+shoes = Counter(map(int, input().split()))
+numOrder = int(input())
+totalProfit = 0
+
+
+for i in range(numOrder):
+    size, price = map(int, input().split())
+    if shoes[size] > 0:
+        shoes[size] -=1 
+        totalProfit += price
+    else:
+        pass
+
+print(totalProfit)
