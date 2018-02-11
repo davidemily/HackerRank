@@ -1,0 +1,6 @@
+firstNum = int(input())
+englishNews = set(map(int,input().split()))
+secondNum = int(input())
+frenchNews = set(map(int,input().split()))
+
+print(len(englishNews.difference(frenchNews)))
