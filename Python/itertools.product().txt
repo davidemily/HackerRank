@@ -1,0 +1,9 @@
+A = (input().split())
+B = (input().split())
+AxB = []
+for i in A:
+    for j in B:
+        AxB.append("("+i +", "+j+")")
+
+for i in AxB:
+    print(i, end=" ")
