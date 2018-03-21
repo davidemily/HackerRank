@@ -1,0 +1,26 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+   // Complete the program
+    string a;
+    string b;
+    
+    cin >> a;
+    cin >> b;
+    
+    cout << a.size() << " " << b.size() << endl;
+    cout << a << b << endl;
+    
+    char tempA = a[0];
+    char tempB = b[0];
+    
+    a[0] = tempB;
+    b[0] = tempA;
+    
+    cout << a << " " << b;
+    
+  
+    return 0;
+}
