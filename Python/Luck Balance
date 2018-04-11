@@ -1,0 +1,30 @@
+#!/bin/python3
+
+import sys
+import collections
+
+def luckBalance(n, k, contests):
+    # Complete this function
+    importantList = list()
+    luckPoints = 0
+    for contest in contests:
+        if contest[1] == 1:
+            importantList.append(contest[0])
+        else:
+            luckPoints += contest[0]
+
+    while len(importantList)>k:
+        luckPoints = luckPoints - (min(importantList))
+        importantList.remove(min(importantList))
+
+    return luckPoints + sum(importantList)
+
+if __name__ == "__main__":
+    n, k = input().strip().split(' ')
+    n, k = [int(n), int(k)]
+    contests = []
+    for contests_i in range(n):
+       contests_t = [int(contests_temp) for contests_temp in input().strip().split(' ')]
+       contests.append(contests_t)
+    result = luckBalance(n, k, contests)
+    print(result)
