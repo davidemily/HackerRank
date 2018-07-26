@@ -1,0 +1,16 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+class Solution {
+    static void Main(String[] args) {
+        int[] ijk=Array.ConvertAll(Console.ReadLine().Split(' '),Int32.Parse);
+        int count=0;
+        for(int t=ijk[0];t<=ijk[1];t++){
+            char[] tChar=t.ToString().ToCharArray();
+            Array.Reverse(tChar);
+            int tReverse=Convert.ToInt32(new string(tChar));
+            if(Math.Abs(t-tReverse)%ijk[2]==0)count++;
+        }
+        Console.WriteLine(count);
+    }
+}
