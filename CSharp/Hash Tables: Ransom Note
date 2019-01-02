@@ -1,0 +1,29 @@
+static void checkMagazine(string[] magazine, string[] note) 
+    {
+        Dictionary<string, int> magazineDict = new Dictionary<string, int>();
+        foreach(string mag in magazine)
+        {
+            if(magazineDict.ContainsKey(mag))
+            {
+                magazineDict[mag] += 1;
+            }
+            else
+            {
+                magazineDict.Add(mag, 1);
+            }
+        }
+        foreach(string word in note)
+        {
+            if(magazineDict.ContainsKey(word) && magazineDict[word]>0)
+            {
+                magazineDict[word] -= 1;
+            }
+            else
+            {
+                Console.WriteLine("No");
+                return;
+            }
+        }
+        Console.WriteLine("Yes");
+        return;
+    }
