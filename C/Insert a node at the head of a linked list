@@ -1,0 +1,13 @@
+
+SinglyLinkedListNode* insertNodeAtHead(SinglyLinkedListNode* llist, int data) 
+{
+    SinglyLinkedListNode* response = 
+        (SinglyLinkedListNode*)malloc(sizeof(SinglyLinkedListNode));
+    response->data = data;
+    response->next = NULL;
+    if(llist != NULL)
+    {
+        response->next = llist;
+    }
+    return response;
+}
