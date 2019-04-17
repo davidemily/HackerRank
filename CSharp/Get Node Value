@@ -1,0 +1,16 @@
+    static int getNode(SinglyLinkedListNode head, int positionFromTail) 
+    {
+        Stack myStack = new Stack();
+        while(head!=null)
+        {
+            Console.WriteLine(head.data);
+            myStack.Push(head.data);
+            head = head.next;
+        }
+        while(positionFromTail>0)
+        {
+            myStack.Pop();
+            positionFromTail--;
+        }
+        return (int)myStack.Pop();
+    }
