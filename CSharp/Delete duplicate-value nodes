@@ -25,5 +25,9 @@
                 next = curr.next;
             }
         }
+        if(numbers.Contains(curr.data))
+        {
+            prev.next = null;
+        }
         return head;
     }
