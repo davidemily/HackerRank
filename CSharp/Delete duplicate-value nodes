@@ -1,0 +1,29 @@
+    static SinglyLinkedListNode removeDuplicates(SinglyLinkedListNode head) 
+    {
+        if(head == null || head.next == null)
+        {
+            return head;
+        }
+        var prev = head;
+        var curr = head;
+        var next = head.next;
+        var numbers = new HashSet<int>();
+        while(next != null)
+        {
+            Console.WriteLine(curr.data);
+            if(numbers.Contains(curr.data))
+            {
+                prev.next = next;
+                curr = curr.next;
+                next = curr.next;
+            }
+            else
+            {
+                numbers.Add(curr.data);
+                prev = curr;
+                curr = curr.next;
+                next = curr.next;
+            }
+        }
+        return head;
+    }
