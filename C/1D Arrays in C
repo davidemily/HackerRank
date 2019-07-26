@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+    int countOfNumbers=0;
+    scanf("%d", &countOfNumbers);
+    
+    //printf("%d \n", countOfNumbers);
+    int numbers[countOfNumbers];
+
+    for(int i=0; i<countOfNumbers; i++)
+    {
+        scanf("%d", &numbers[i]);
+    }
+
+    int sum = 0;
+    for(int i=0; i<countOfNumbers; i++)
+    {
+        //printf("%d ", numbers[i]);
+        sum += numbers[i];
+    }
+    //printf("\n");
+    printf("%d", sum);
+    return 0;
+}
+
